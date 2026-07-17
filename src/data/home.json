@@ -1,8 +1,8 @@
 {
-	"description": "A minimal personal blog & writing space, built with Astro. Notes on whatever I happen to be thinking about — usually some mix of code, design, and the occasional half-formed idea. Replace this paragraph in src/data/home.json to make the site your own.",
-	"social": {
-		"github": "https://github.com/example",
-		"linkedin": "https://www.linkedin.com/in/example/",
-		"email": "john@example.com"
-	}
+  "description": "A minimal personal blog & writing space, built with Astro. Notes on whatever I happen to be thinking about — usually some mix of code, design, and the occasional half-formed idea. Replace this paragraph in src/data/home.json to make the site your own.",
+  "social": {
+    "github": "https://github.com/thereisnoriver",
+    "linkedin": "https://www.linkedin.com/in/example/",
+    "email": "riverisnt@gmail.com"
+  }
 }
