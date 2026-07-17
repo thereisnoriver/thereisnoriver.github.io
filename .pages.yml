@@ -1,0 +1,85 @@
+# Pages CMS configuration — https://pagescms.org
+#
+# This file only tells Pages CMS which folders/fields to edit. It does not
+# grant access by itself: editing still requires signing in at
+# app.pagescms.org with a GitHub account that has write access to this
+# repository (thereisnoriver/thereisnoriver.github.io). No token, password,
+# or secret lives in this repo or in the site's frontend.
+
+media:
+  input: src/content/post/_assets
+  output: ./_assets
+
+content:
+  - name: post
+    label: 게시글
+    type: collection
+    path: src/content/post
+    filename:
+      template: "{primary}.md"
+      field: create
+    operations:
+      rename: false # filename is the URL slug — renaming would break published links
+    view:
+      fields: [title, publishDate, draft]
+      primary: title
+      sort: [publishDate, title]
+      default:
+        sort: publishDate
+        order: desc
+    fields:
+      - name: title
+        label: 제목
+        type: string
+        required: true
+        options:
+          maxlength: 120
+
+      - name: description
+        label: 설명
+        type: text
+        required: true
+        options:
+          minlength: 10
+          maxlength: 160
+
+      - name: publishDate
+        label: 발행일
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+
+      - name: updatedDate
+        label: 수정일
+        type: date
+        default: ""
+        options:
+          format: yyyy-MM-dd
+
+      - name: tags
+        label: 태그
+        type: string
+        list: true
+
+      - name: draft
+        label: 초안 (체크 시 배포에서 제외)
+        type: boolean
+        default: false
+
+      - name: coverImage
+        label: 커버 이미지
+        type: object
+        fields:
+          - name: src
+            label: 이미지
+            type: image
+          - name: alt
+            label: 대체 텍스트
+            type: string
+
+      - name: body
+        label: 본문
+        type: rich-text
+        options:
+          format: markdown
