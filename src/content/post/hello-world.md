@@ -1,10 +1,13 @@
 ---
-title: "Hello, world"
+title: 안녕
+description: 여기선 뭘 했는지 적을까
 publishDate: 2026-03-01
-description: "A first post — and a quick tour of what the writing template can render."
-tags: [ intro, demo, guide ]
+tags:
+  - intro
+  - demo
+  - guide
+draft: false
 ---
-
 Welcome. This is the first post in your new blog. Replace it (or delete it) when you write your first real post.
 
 ## Headings, lists, links
@@ -45,7 +48,7 @@ pnpm dev
 [KaTeX](https://katex.org) is wired up. Inline like $E = mc^2$ and as a display:
 
 $$
-\int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}
+\int_{-\infty}^{\infty} e^{-x^2}dx = \sqrt{\pi}
 $$
 
 ## Quotes & emphasis
@@ -62,3 +65,4 @@ You can use *emphasis* and **strong** the usual way.
 - Replace `src/content/page/about.md` with your own bio.
 - Drop new posts into `src/content/post/` — the filename becomes the URL slug.
 - See the README for full setup and customization steps.
+
