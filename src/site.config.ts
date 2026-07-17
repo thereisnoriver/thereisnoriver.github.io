@@ -1,5 +1,6 @@
 import type { SiteConfig } from "@/types";
 import type { AstroExpressiveCodeOptions } from "astro-expressive-code";
+import homeContent from "./data/home.json";
 
 export const siteConfig: SiteConfig = {
 	author: "Your Name",
@@ -11,8 +12,9 @@ export const siteConfig: SiteConfig = {
 			year: "numeric",
 		},
 	},
-	description:
-		"A minimal personal blog & writing space, built with Astro. Notes on whatever I happen to be thinking about — usually some mix of code, design, and the occasional half-formed idea. Replace this paragraph in src/site.config.ts to make the site your own.",
+	// Hero text on the homepage, and the site-wide default meta/RSS description.
+	// Edit src/data/home.json (or via Pages CMS) rather than this literal.
+	description: homeContent.description,
 	lang: "en-US",
 	ogLocale: "en_US",
 	sortPostsByUpdatedDate: false,
@@ -20,9 +22,9 @@ export const siteConfig: SiteConfig = {
 	hideThemeCredit: false,
 	profile: {
 		name: "John Doe",
-		email: "john@example.com",
-		github: "https://github.com/example",
-		linkedin: "https://www.linkedin.com/in/example/",
+		email: homeContent.social.email,
+		github: homeContent.social.github,
+		linkedin: homeContent.social.linkedin,
 		jobTitle: "Software Engineer",
 		employer: "Example Inc.",
 		employerUrl: "https://example.com",

@@ -83,3 +83,64 @@ content:
         type: rich-text
         options:
           format: markdown
+
+  - name: home
+    label: 홈 화면
+    type: file
+    path: src/data/home.json
+    format: json
+    operations:
+      delete: false # 삭제하면 빌드가 깨짐 (site.config.ts가 이 파일을 읽음)
+    fields:
+      - name: description
+        label: 소개 문구 (홈 히어로 문구 · 메타 설명 · RSS 설명에 공통 사용)
+        type: text
+        required: true
+        options:
+          minlength: 10
+          maxlength: 300
+
+      - name: social
+        label: 소셜 링크
+        type: object
+        fields:
+          - name: github
+            label: GitHub URL
+            type: string
+          - name: linkedin
+            label: LinkedIn URL
+            type: string
+          - name: email
+            label: 이메일
+            type: string
+
+  - name: showcase
+    label: 쇼케이스
+    type: file
+    path: src/data/showcase.json
+    format: json
+    operations:
+      delete: false # 삭제하면 빌드가 깨짐 (src/data/showcase.ts가 이 파일을 읽음)
+    fields:
+      - name: items
+        label: 프로젝트 목록
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: 이름
+            type: string
+            required: true
+          - name: href
+            label: 링크
+            type: string
+            required: true
+          - name: stack
+            label: 스택
+            type: string
+          - name: badge
+            label: 배지
+            type: string
+          - name: desc
+            label: 설명
+            type: text
