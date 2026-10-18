@@ -3,7 +3,7 @@ import type { AstroExpressiveCodeOptions } from "astro-expressive-code";
 import homeContent from "./data/home.json";
 
 export const siteConfig: SiteConfig = {
-	author: "Your Name",
+	author: "Kangeun Noh",
 	date: {
 		locale: "en-US",
 		options: {
@@ -18,18 +18,14 @@ export const siteConfig: SiteConfig = {
 	lang: "en-US",
 	ogLocale: "en_US",
 	sortPostsByUpdatedDate: false,
-	title: "Astro Sienna",
+	title: "Kangeun Noh",
 	hideThemeCredit: false,
 	profile: {
-		name: "John Doe",
+		name: "Kangeun Noh",
 		email: homeContent.social.email,
 		github: homeContent.social.github,
 		linkedin: homeContent.social.linkedin,
 		jobTitle: "Software Engineer",
-		employer: "Example Inc.",
-		employerUrl: "https://example.com",
-		alumni: "Example University",
-		avatar: "/avatar.png",
 	},
 	// Uncomment & fill in to enable Giscus comments on every post.
 	// comments: {

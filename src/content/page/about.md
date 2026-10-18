@@ -1,14 +1,8 @@
 ---
 title: About
-description: A short introduction. Replace this in src/content/page/about.md.
+description: About Kangeun Noh — personal website under reconstruction.
 ---
 
-This is the About page. It's a markdown file at `src/content/page/about.md` — edit it freely. The shape is intentionally unstructured so you can write a paragraph, a list, a CV, or whatever fits.
+I'm Kangeun Noh, a software engineer interested in software security, system reliability, and verifying changes to existing systems.
 
-A few example bullets to get going:
-
-- 👋 One-line intro — what you do, where, since when.
-- 🛠 The tools you reach for first.
-- 📝 What you tend to write about here.
-
-Find me on [GitHub](https://github.com/example), [LinkedIn](https://www.linkedin.com/in/example/), or by [email](mailto:john@example.com).
+This website is being redesigned. For current projects, please visit [my GitHub profile](https://github.com/thereisnoriver).

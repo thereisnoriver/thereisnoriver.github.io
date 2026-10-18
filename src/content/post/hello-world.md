@@ -6,7 +6,7 @@ tags:
   - intro
   - demo
   - guide
-draft: false
+draft: true
 ---
 Welcome. This is the first post in your new blog. Replace it (or delete it) when you write your first real post.
 

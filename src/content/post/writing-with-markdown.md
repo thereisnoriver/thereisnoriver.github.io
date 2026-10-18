@@ -6,6 +6,7 @@ tags: [ guide, writing, markdown ]
 coverImage:
   src: ./_assets/cover-arcs.jpg
   alt: "Concentric earth-tone arcs rising from a horizon line, like an abstract risograph sunrise."
+draft: true
 ---
 
 Posts live as `.md` files in `src/content/post/`. The filename becomes the URL slug. Frontmatter fields are validated by
