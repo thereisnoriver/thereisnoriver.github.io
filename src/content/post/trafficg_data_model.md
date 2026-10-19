@@ -4,7 +4,7 @@ description: "A translated relational schema proposal for a ticket reservation s
 publishDate: 2025-05-10
 updatedDate: 2026-10-19
 tags: [trafficg, database, system-design]
-draft: true
+draft: false
 ---
 
 > Original Korean design: [ERD](https://tyge-ottesen-brahe.tistory.com/31). This is a **proposed schema**, not a verified production schema. Column names, types, statuses, and constraints below come from the planning document unless labeled as editorial review.
