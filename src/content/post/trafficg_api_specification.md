@@ -4,7 +4,7 @@ description: "Proposed authentication, performance, reservation, payment, queue,
 publishDate: 2025-05-10
 updatedDate: 2026-10-19
 tags: [trafficg, rest-api, system-design]
-draft: true
+draft: false
 ---
 
 > English version of the [original Korean API specification](https://tyge-ottesen-brahe.tistory.com/33). This is a **design document**, not verified deployed API documentation. Original endpoint patterns and response examples are retained with text translated into English; discrepancies are listed at the end.
