@@ -1,7 +1,7 @@
 ---
 title: "October 2026 Banking Intrusions: The Overlooked Attack Surface"
 description: "A concise review of Korean banking breaches, exposed business-support systems, and the limits of early incident reports."
-publishDate: 2026-11-02
+publishDate: 2026-10-19
 tags: [security, incident-analysis, banking, access-control]
 draft: false
 ---
