@@ -4,7 +4,7 @@ description: "Why HTTP applications need state management, how browser cookies w
 publishDate: 2025-05-14
 updatedDate: 2026-10-19
 tags: [web, authentication, security]
-draft: true
+draft: false
 ---
 
 > Translated and technically reviewed from [the original Korean post](https://tyge-ottesen-brahe.tistory.com/36).
