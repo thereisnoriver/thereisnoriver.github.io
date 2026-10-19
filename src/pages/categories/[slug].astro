@@ -1,0 +1,42 @@
+---
+import { getAllPosts, getPostSortDate, sortMDByDate } from "@/data/post";
+import Base from "@/layouts/Base.astro";
+import { withBase } from "@/utils/path";
+const groups = [
+  { slug: "incidents", title: "Incident Reports", subtitle: "Breach reviews and security failures" },
+  { slug: "security", title: "Security Engineering", subtitle: "Trust, verification and remediation" },
+  { slug: "systems", title: "Backend & Systems", subtitle: "Infrastructure and production engineering" },
+  { slug: "notes", title: "Engineering Notes", subtitle: "Ideas and field notes" },
+];
+export function getStaticPaths() {
+  return groups.map((group) => ({params:{slug:group.slug},props:{group}}));
+}
+const {group} = Astro.props;
+const posts = sortMDByDate(await getAllPosts());
+function category(tags:string[]) {
+ const t=tags.map(x=>x.toLowerCase());
+ if(["incident-analysis","telecommunications","banking"].some(k=>t.includes(k))) return "incidents";
+ if(["patch-validation","software-reliability","security","patch-management"].some(k=>t.includes(k))) return "security";
+ if(["java","spring","backend","database","system","web","authentication"].some(k=>t.some(v=>v.includes(k)))) return "systems";
+ return "notes";
+}
+const matches=posts.filter(post=>category(post.data.tags??[])===group.slug);
+---
+<Base meta={{title:group.title,description:group.subtitle}}>
+  <div class="category-page">
+    <a class="back" href={withBase("/")}>← THE FRONT PAGE</a>
+    <p class="kicker">A DEPARTMENT OF THERE IS NO RIVER</p>
+    <h1>{group.title}</h1>
+    <p class="subtitle">{group.subtitle}</p>
+    <div class="rule">ARTICLES <span>{String(matches.length).padStart(2,"0")}</span></div>
+    {matches.length === 0 && <p>No articles in this department yet.</p>}
+    {matches.map((post,i)=><article class="entry">
+      <span class="number">{String(i+1).padStart(2,"0")}</span>
+      <div><h2><a href={withBase(`/posts/${post.id}/`)}>{post.data.title}</a></h2><p>{post.data.description}</p></div>
+      <time datetime={getPostSortDate(post).toISOString()}>{getPostSortDate(post).toLocaleDateString("en-GB",{year:"numeric",month:"short",day:"numeric",timeZone:"UTC"})}</time>
+    </article>)}
+  </div>
+</Base>
+<style>
+.category-page{margin-bottom:90px}.back,.kicker,.rule{font:600 11px var(--font-sans);letter-spacing:.14em}.back{color:hsl(var(--theme-accent));}.kicker{margin:55px 0 10px;color:hsl(var(--theme-text-muted))}.category-page h1{font:500 clamp(40px,7vw,66px)/1.05 var(--font-serif);letter-spacing:-.04em;margin:0}.subtitle{color:hsl(var(--theme-text-muted));font-style:italic;font-size:19px}.rule{border-top:3px double hsl(var(--theme-text));border-bottom:1px solid var(--hairline);padding:14px 0;display:flex;justify-content:space-between;margin:40px 0 0}.entry{display:grid;grid-template-columns:27px minmax(0,1fr) 86px;gap:15px;padding:24px 0;border-bottom:1px solid var(--hairline)}.number{font:italic 20px var(--font-serif);color:var(--faint)}.entry h2{font:500 24px/1.2 var(--font-serif);margin:0 0 8px}.entry h2 a:hover{color:hsl(var(--theme-accent))}.entry p{font-size:15px;color:hsl(var(--theme-text-muted));margin:0}.entry time{font:11px var(--font-sans);color:hsl(var(--theme-text-muted));text-align:right}@media(max-width:550px){.entry{grid-template-columns:25px 1fr}.entry time{grid-column:2;text-align:left}.entry h2{font-size:21px}}
+</style>
