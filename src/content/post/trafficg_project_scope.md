@@ -4,7 +4,7 @@ description: "Early planning notes for an online concert reservation prototype, 
 publishDate: 2025-05-04
 updatedDate: 2026-10-19
 tags: [trafficg, system-design, project-notes]
-draft: true
+draft: false
 ---
 
 > Translated from [the original Korean planning note](https://tyge-ottesen-brahe.tistory.com/29). This is an **initial plan**, not a list of completed functionality.
