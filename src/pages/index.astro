@@ -6,10 +6,10 @@ import { withBase } from "@/utils/path";
 
 const posts = sortMDByDate(await getAllPosts());
 const groups = [
-  { name: "Incident Reports", number: "01", subtitle: "Breach reviews & security failures", keywords: ["incident-analysis", "telecommunications", "banking"] },
-  { name: "Security Engineering", number: "02", subtitle: "Trust, verification & remediation", keywords: ["patch-validation", "software-reliability", "security", "patch-management"] },
-  { name: "Backend & Systems", number: "03", subtitle: "Infrastructure, Java & production systems", keywords: ["java", "spring", "backend", "database", "system", "web", "authentication"] },
-  { name: "Engineering Notes", number: "04", subtitle: "Ideas, experiments & field notes", keywords: [] },
+  { name: "Incident Reports", number: "01", slug: "incidents", subtitle: "Breach reviews & security failures", keywords: ["incident-analysis", "telecommunications", "banking"] },
+  { name: "Security Engineering", number: "02", slug: "security", subtitle: "Trust, verification & remediation", keywords: ["patch-validation", "software-reliability", "security", "patch-management"] },
+  { name: "Backend & Systems", number: "03", slug: "systems", subtitle: "Infrastructure, Java & production systems", keywords: ["java", "spring", "backend", "database", "system", "web", "authentication"] },
+  { name: "Engineering Notes", number: "04", slug: "notes", subtitle: "Ideas, experiments & field notes", keywords: [] },
 ];
 function category(tags: string[]) {
   const lower = tags.map(t => t.toLowerCase());
@@ -61,7 +61,7 @@ const readable = (date: Date) => date.toLocaleDateString("en-GB", { day: "2-digi
       <div class="department-grid">
         {groups.map((group) => {
           const count = posts.filter(p => category(p.data.tags ?? []) === group.name).length;
-          return <a class="department" href={withBase(`/posts/?category=${encodeURIComponent(group.name)}`)}>
+          return <a class="department" href={withBase(`/categories/${group.slug}/`)}>
             <span class="dept-number">NO. {group.number}</span>
             <h3>{group.name} <span aria-hidden="true">↗</span></h3>
             <p>{group.subtitle}</p>
