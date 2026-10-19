@@ -4,7 +4,7 @@ description: "Preparing one control-plane VM and two worker VMs for a kubeadm-ba
 publishDate: 2025-04-07
 updatedDate: 2026-10-19
 tags: [kubernetes, google-cloud, linux, lab]
-draft: true
+draft: false
 ---
 
 > English translation and technical edit of the [original Korean lab note](https://tyge-ottesen-brahe.tistory.com/15). This is a record of a 2025 learning exercise, not a validated production installation guide. Command examples are illustrative and may require updates for the current Kubernetes, Ubuntu, and Google Cloud releases.
