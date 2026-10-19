@@ -1,7 +1,7 @@
 ---
 title: "When Security Changes Disrupt Production Workflows"
 description: "How privacy logging, payment controls, encryption, and security patches can affect existing production behavior and system integrations."
-publishDate: 2026-10-19
+publishDate: 2026-02-01
 tags: [security, software-reliability, production-systems, patch-validation]
 draft: false
 ---
