@@ -4,7 +4,7 @@ description: "A development diary covering the screens I built, styling problems
 publishDate: 2025-05-25
 updatedDate: 2026-10-19
 tags: [trafficg, react, typescript, frontend]
-draft: true
+draft: false
 ---
 
 > English translation of the [original Korean frontend diary](https://tyge-ottesen-brahe.tistory.com/39). Features described as future work in the original are still labeled as future work here. Original screenshots have not yet been imported.
