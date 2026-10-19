@@ -4,7 +4,7 @@ description: "A study note on JWT-based authentication, token theft, refresh-tok
 publishDate: 2025-05-22
 updatedDate: 2026-10-19
 tags: [authentication, jwt, security]
-draft: true
+draft: false
 ---
 
 > Translated and technically reviewed from [the original Korean post](https://tyge-ottesen-brahe.tistory.com/38). This is a conceptual guide, not a claim that the described controls were deployed in production.
