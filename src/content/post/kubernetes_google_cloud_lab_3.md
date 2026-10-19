@@ -4,7 +4,7 @@ description: "Applying Kubernetes workload manifests and learning what controlle
 publishDate: 2025-04-07
 updatedDate: 2026-10-19
 tags: [kubernetes, pods, deployments, operations, lab]
-draft: true
+draft: false
 ---
 
 > English translation and technical edit of the [original Korean lab note](https://tyge-ottesen-brahe.tistory.com/18), following [Part 1](11_kubernetes_google_cloud_lab_1.md) and [Part 2](12_kubernetes_google_cloud_lab_2.md). These examples communicate the learning steps and have not been independently executed for this revision.
