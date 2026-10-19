@@ -4,7 +4,7 @@ description: "A beginner's attempt to understand why virtualization, containers,
 publishDate: 2025-05-11
 updatedDate: 2026-10-19
 tags: [kubernetes, docker, virtualization]
-draft: true
+draft: false
 ---
 
 > Translated and technically edited from the [original Korean article](https://tyge-ottesen-brahe.tistory.com/35). The source is an extended beginner's explanation. This version preserves its conceptual progression while correcting several generalizations and explicitly separating common patterns from guarantees.
