@@ -9,9 +9,10 @@ const groups = [
   { slug: "notes", title: "Engineering Notes", subtitle: "Ideas and field notes" },
 ];
 export function getStaticPaths() {
-  return groups.map((group) => ({params:{slug:group.slug},props:{group}}));
+  return ["incidents", "security", "systems", "notes"].map((slug) => ({params:{slug},props:{slug}}));
 }
-const {group} = Astro.props;
+const {slug} = Astro.props;
+const group = groups.find((g) => g.slug === slug)!;
 const posts = sortMDByDate(await getAllPosts());
 function category(tags:string[]) {
  const t=tags.map(x=>x.toLowerCase());
