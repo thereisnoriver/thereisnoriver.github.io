@@ -4,7 +4,7 @@ description: "Configuring containerd, bootstrapping the control plane, and joini
 publishDate: 2025-04-07
 updatedDate: 2026-10-19
 tags: [kubernetes, kubeadm, containerd, networking, lab]
-draft: true
+draft: false
 ---
 
 > English translation and technical edit of the [original Korean lab note](https://tyge-ottesen-brahe.tistory.com/16), continuing [Part 1](11_kubernetes_google_cloud_lab_1.md). Commands are explanatory, historically grounded examples. They have **not** been rerun against a current cloud environment.
