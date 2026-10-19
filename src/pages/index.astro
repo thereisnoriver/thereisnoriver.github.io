@@ -26,38 +26,38 @@ const readable = (date: Date) => date.toLocaleDateString("en-GB", { day: "2-digi
 <PageLayout meta={{ title: "Home", description: siteConfig.description }}>
   <div class="journal">
     <div class="edition-top">
-      <span>AN INDEPENDENT ENGINEERING JOURNAL</span>
-      <span>EST. 2026 · ISSUE NO. 001</span>
+      <span>SOFTWARE · SECURITY · SYSTEMS</span>
+      <span>EST. 2026</span>
     </div>
     <div class="masthead">
-      <p class="ornament" aria-hidden="true">✦ &nbsp; ✧ &nbsp; ✦</p>
-      <h1>There Is No River</h1>
-      <p>Dispatches on software, security, and the systems between them.</p>
+      <h1>Kangeun Noh</h1>
+      <p class="signature">there is no river.</p>
+      <p class="descriptor">Notes on software engineering &amp; security.</p>
     </div>
     <div class="edition-line">
+      <span>WRITING &amp; TECHNICAL NOTES</span>
       <span>SOFTWARE · SECURITY · SYSTEMS</span>
-      <span>NOTES FROM THE FIELD</span>
     </div>
 
     <section class="lead" aria-labelledby="latest">
       <div class="lead-content">
-        <p class="folio">THE LEAD STORY <span>·</span> {featured ? readable(getPostSortDate(featured)) : "ARCHIVE"}</p>
+        <p class="folio">FEATURED ARTICLE <span>·</span> {featured ? readable(getPostSortDate(featured)) : "ARCHIVE"}</p>
         {featured && <>
           <h2 id="latest"><a href={withBase(`/posts/${featured.id}/`)}>{featured.data.title}</a></h2>
           <p class="lead-description">{featured.data.description}</p>
           <a class="read-story" href={withBase(`/posts/${featured.id}/`)}>Read the article <span aria-hidden="true">↗</span></a>
         </>}
       </div>
-      <aside class="editorial-note">
-        <span class="note-number">I.</span>
-        <h3>Systems fail.<br/><em>Details matter.</em></h3>
-        <p>A working notebook on engineering decisions, security trade-offs, and what happens when one change reaches another system.</p>
-        <div class="note-sign">THE EDITOR'S NOTE</div>
+      <aside class="explore-note">
+        <p class="folio">EXPLORE</p>
+        <nav aria-label="Article categories">
+          {groups.map((group) => <a href={withBase(`/categories/${group.slug}/`)}><span>{group.number}.</span> {group.name} <span aria-hidden="true">↗</span></a>)}
+        </nav>
       </aside>
     </section>
 
     <section class="sections" aria-labelledby="departments">
-      <div class="section-heading"><span id="departments">THE DEPARTMENTS</span><span>FOUR FIELDS OF INQUIRY</span></div>
+      <div class="section-heading"><span id="departments">EXPLORE BY TOPIC</span><span>FOUR CATEGORIES</span></div>
       <div class="department-grid">
         {groups.map((group) => {
           const count = posts.filter(p => category(p.data.tags ?? []) === group.name).length;
@@ -145,5 +145,32 @@ const readable = (date: Date) => date.toLocaleDateString("en-GB", { day: "2-digi
     .dispatch { grid-template-columns:24px minmax(0,1fr); gap:9px; }
     .dispatch h3 { font-size:20px; }
     .dispatch time { grid-column:2; text-align:left; padding-top:0; }
+  }
+</style>
+
+<style is:global>
+  /* Give the newspaper front page a wide sheet without stretching articles. */
+  .wrap:has(.journal) { max-width: 1120px; }
+  .wrap:has(.journal) .site-header .wordmark { visibility: hidden; }
+  .wrap:has(.journal) .site-header { margin-bottom: 33px; }
+</style>
+<style>
+  .journal .masthead { padding: 24px 0 26px; }
+  .journal .masthead h1 { font-size: clamp(48px, 7vw, 72px); letter-spacing: -.045em; }
+  .journal .masthead .signature { margin: 5px auto 0; font-size: 23px; font-style: italic; color: hsl(var(--theme-accent)); }
+  .journal .masthead .descriptor { margin: 7px auto 0; font: 13px/1.5 var(--font-sans); color: hsl(var(--theme-text-muted)); }
+  .journal .lead { grid-template-columns: minmax(0, 1.6fr) minmax(245px, 1fr); padding: 34px 0 35px; gap: 40px; }
+  .journal .lead h2 { max-width: 650px; }
+  .explore-note { border-left: 1px solid var(--hairline); padding: 12px 0 0 28px; }
+  .explore-note nav { display: grid; margin-top: 18px; }
+  .explore-note nav a { display: flex; align-items: baseline; gap: 10px; padding: 13px 0; border-bottom: 1px solid var(--hairline); font: 500 18px/1.3 var(--font-serif); }
+  .explore-note nav a span:first-child { color: hsl(var(--theme-accent)); font-size: 15px; }
+  .explore-note nav a span:last-child { margin-left: auto; color: hsl(var(--theme-accent)); font: 14px var(--font-sans); }
+  .explore-note nav a:hover { color: hsl(var(--theme-accent)); }
+  @media(max-width:650px) {
+    .journal .lead { display: block; padding: 24px 0; }
+    .explore-note { border-left: 0; border-top: 1px solid var(--hairline); padding: 22px 0 0; margin-top: 28px; }
+    .journal .masthead h1 { font-size: clamp(42px, 11vw, 58px); }
+    .journal .masthead .signature { font-size: 20px; }
   }
 </style>
