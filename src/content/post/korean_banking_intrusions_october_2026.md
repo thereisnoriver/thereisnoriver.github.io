@@ -1,7 +1,7 @@
 ---
 title: "October 2026 Banking Intrusions: The Overlooked Attack Surface"
 description: "A concise review of Korean banking breaches, exposed business-support systems, and the limits of early incident reports."
-publishDate: 2026-10-19
+publishDate: 2026-11-02
 tags: [security, incident-analysis, banking, access-control]
 draft: false
 ---
@@ -64,4 +64,4 @@ Access checks, patching, monitoring, and end-to-end compatibility validation all
 - [NewsPim: Initial banking reports, October 2, 2026](https://www.newspim.com/news/view/20261002001278)
 - [Yonhap: Financial regulators' October 14 update](https://www.yna.co.kr/view/AKR20261014134851002)
 
-*The investigation was ongoing at the time of publication. Preliminary figures and alleged attack mechanisms are subject to revision.*
+*The investigation was ongoing as of the information reviewed on October 19, 2026. Preliminary figures and alleged attack mechanisms are subject to revision.*
