@@ -7,7 +7,7 @@ tags:
   - kubernetes
   - deployment
   - reliability
-draft: true
+draft: false
 ---
 
 > **Translation note:** Originally published in Korean on [Tistory](https://tyge-ottesen-brahe.tistory.com/40) on May 27, 2025. Translated into English and technically reviewed in October 2026. This is a conceptual study note, not a report of a production deployment.
