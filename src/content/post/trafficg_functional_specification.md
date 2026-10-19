@@ -4,7 +4,7 @@ description: "A design-stage specification covering account management, ticket q
 publishDate: 2025-05-05
 updatedDate: 2026-10-19
 tags: [trafficg, api-design, concurrency, system-design]
-draft: true
+draft: false
 ---
 
 > Translated and reorganized from the [original Korean specification](https://tyge-ottesen-brahe.tistory.com/30). **Design specification only**: endpoints and processing rules below do not necessarily match completed implementation. This draft is a structured translation of the functional requirements, with technical review notes clearly separated.
