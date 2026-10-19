@@ -4,7 +4,7 @@ description: "Five failure-oriented exercises and a comparison of local and prod
 publishDate: 2025-08-03
 updatedDate: 2026-10-19
 tags: [kubernetes, testing, deployment]
-draft: true
+draft: false
 ---
 
 > Originally published in Korean: [Rolling Update Test](https://tyge-ottesen-brahe.tistory.com/42). This document records **an experiment plan and learning notes**, not verified results from all five experiments. The notes were translated, reorganized, and technically reviewed in October 2026.
